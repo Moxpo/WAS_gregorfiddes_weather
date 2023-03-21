@@ -13,4 +13,8 @@ class News(models.Model):
     date = models.DateField()
     text = models.TextField()
 
+class Meta:
+    verbose_name_plural = News
+
+
 # Create your models here.
