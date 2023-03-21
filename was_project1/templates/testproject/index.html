@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+        <title>School News</title>
+    </head>
+
+    <body>
+        <h1>School News</h1>
+        <ul>
+            {% for entry in news %}
+            <li>
+                <h2>{{ entry.title }}</h2>
+                <p class="author">{{ entry.author }} - {{ entry.date }}</p>
+                <p>{{ entry.text }}</p>
+            </li>
+            {% empty %}
+            <li><strong>No news available.</strong></li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
